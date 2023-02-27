@@ -1,4 +1,17 @@
 import React from 'react';
+import BGAnime from '../components/BGAnime';
+import FAQArea from '../components/FAQArea';
+import IntroArea from '../components/IntroArea';
+import ProjectArea from '../components/ProjectArea';
+import SkillsArea from '../components/SkillsArea';
 export default function Homepage() {
-  return <div className="h-36 mt-6">hi</div>;
+  return (
+    <>
+      <BGAnime />
+      <IntroArea />
+      <ProjectArea />
+      <SkillsArea />
+      <FAQArea />
+    </>
+  );
 }

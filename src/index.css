@@ -1,11 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@import url(./reset.css);
 * {
+  /* font-family: 'Spoqa Han Sans Neo', 'sans-serif'; */
   box-sizing: border-box;
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-}
-input {
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
