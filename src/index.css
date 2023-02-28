@@ -4,3 +4,13 @@
   /* font-family: 'Spoqa Han Sans Neo', 'sans-serif'; */
   box-sizing: border-box;
 }
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #3a3a3d50;
+  border-radius: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.8);
+}

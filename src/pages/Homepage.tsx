@@ -1,5 +1,6 @@
 import React from 'react';
 import BGAnime from '../components/BGAnime';
+import ContactMe from '../components/ContactMe';
 import FAQArea from '../components/FAQArea';
 import IntroArea from '../components/IntroArea';
 import ProjectArea from '../components/ProjectArea';
@@ -12,6 +13,7 @@ export default function Homepage() {
       <ProjectArea />
       <SkillsArea />
       <FAQArea />
+      <ContactMe />
     </>
   );
 }
