@@ -6,17 +6,17 @@ export default function IntroArea() {
     <Container>
       <ContentContainer>
         <img src={dotIcon} alt="" />
-        <p>
-          안녕하세요. 프론트엔드 신입 개발자 최하영입니다. 여기서부터는 알아서
-          적는 자기소개서 어디서 태어났고 적으면 안됨 절대로 심플하게 적으셈
-          많이 적지말고 인간의 오아이스도 있는 황금시대를 때까지 이상의 보내는
-          그리하였는가? 얼음에 같이 피고, 눈이 풍부하게 설산에서 긴지라
-          철환하였는가? 유소년에게서 기관과 가치를 귀는 풀이 운다. 무한한 위하여
-          같이, 살았으며, 그들은 얼음과 봄바람이다. 청춘은 실로 황금시대의
-          이상의 이상, 우리 아름다우냐? 소리다. 이것은 못할 인간에 심장은 수
-          낙원을 우리의 부패뿐이다. 아니한 노래하며 보이는 끓는다. 보이는 바로
-          가슴이 하여도 밝은 새 있는 때문이다.
-        </p>
+        <div>
+          <ContentTextArea>
+            안녕하세요. 프론트엔드 신입 개발자 최하영입니다.
+          </ContentTextArea>
+          <ContentTextArea>
+            전공에 흥미를 느끼지 못하던 저는 수업 중 우연히 프로그래밍을 접하게
+            되었고, 흔히들 '개발자는 평생 공부해야 한다.' 라는 말을 단점처럼
+            얘기하지만, 저는 앞으로도 끊이지 않을 놀라움에 기대하며 유연하게
+            흡수하는 개발자가 되고 싶은 마음입니다. :)
+          </ContentTextArea>
+        </div>
         <LinkContainer>
           <DownloadLink href="">이력서 다운받기</DownloadLink>
           <DownloadLink href="">자기소개서 다운받기</DownloadLink>
@@ -38,6 +38,18 @@ const ContentContainer = styled.div`
   width: 581px;
   margin: 0 auto;
   gap: 40px;
+`;
+const ContentTextArea = styled.p`
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  text-align: center;
+  b {
+    font-weight: 700;
+  }
+  :first-child {
+    font-weight: 700;
+  }
 `;
 const LinkContainer = styled.div`
   display: flex;
