@@ -16,7 +16,9 @@ export default function ProjectArea() {
         <Project>Project</Project>
         <Title>헬스헬써</Title>
         <Description>
-          헬스계의 당근마켓... 설명적고 2~3줄 ㅁㅇㄻㅇㄻㅇㄹ
+          헬스에 관심이 많아진 요새, 홈짐(집에 운동기구를 두어 운동하는 공간)을
+          시간별로 판매하고 다양한 소통을 할 수 있는 커뮤니티 기능까지 갖춘
+          헬스계의 당근마켓!
         </Description>
         <DetailContainer>
           <ContentContainer>
@@ -47,9 +49,16 @@ export default function ProjectArea() {
         <div>
           <ContentName>작업내용</ContentName>
           <ListContainer>
-            <ListItem>첫번째</ListItem>
-            <ListItem>두번째</ListItem>
-            <ListItem>세번째</ListItem>
+            <ListItem>
+              메인페이지 (메뉴 바, 캐러샐, 카테고리별 링크, 게시글 미리보기)
+            </ListItem>
+            <ListItem>
+              커뮤니티 페이지 (게시글 및 댓글 CRUD기능, 추천하기, 검색기능)
+            </ListItem>
+            <ListItem>
+              홈짐 예약 페이지 (카테고리별 분류 기능, 글 작성 버튼)
+            </ListItem>
+            <ListItem>소셜 로그인</ListItem>
           </ListContainer>
         </div>
       </TextContainer>
@@ -105,7 +114,10 @@ const IFrameContent = styled.iframe`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 320px;
   gap: 10px;
+  line-height: 22px;
+  padding: 4px;
 `;
 const Project = styled.p`
   font-weight: 700;
@@ -146,7 +158,7 @@ const ContentContainer = styled.div`
 `;
 const ContentName = styled.p`
   font-weight: 700;
-  margin-right: 8px;
+  width: 72px;
 `;
 const ProjectLink = styled.a`
   text-decoration: none;
