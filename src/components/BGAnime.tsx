@@ -22,7 +22,7 @@ export default function BGAnime() {
   const handleDivScroll = () => {
     if (containerRef.current?.scrollTop) {
       const scroll = containerRef.current.scrollTop;
-      const idx = Math.ceil(Math.floor((scroll / 1420) * 100) / 2);
+      const idx = Math.floor(Math.floor((scroll / 1420) * 100) / 2);
       console.log(idx);
       const ctx = canvasRef.current?.getContext('2d');
       const img = new Image();
@@ -81,6 +81,7 @@ const TextArea = styled.p`
   color: white;
   font-weight: 700;
   font-size: 80px;
+  line-height: 92.4px;
 `;
 const ScrollArea = styled.div`
   height: 300vh;
