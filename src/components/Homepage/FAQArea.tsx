@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import arrowDownIcon from '../assets/arrowDown.png';
-import arrowUpIcon from '../assets/arrowUp.png';
-import FAQList from '../data/FAQ';
+import arrowDownIcon from '../../assets/arrowDown.png';
+import arrowUpIcon from '../../assets/arrowUp.png';
+import FAQList from '../../data/FAQ';
 export interface FAQ {
   no: number;
   title: string;

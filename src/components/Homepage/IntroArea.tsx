@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import dotIcon from '../assets/dotIcon.png';
+import dotIcon from '../../assets/dotIcon.png';
 export default function IntroArea() {
   return (
     <Container>
@@ -30,7 +30,6 @@ export default function IntroArea() {
         </div>
         <LinkContainer>
           <DownloadLink href="">이력서 다운받기</DownloadLink>
-          <DownloadLink href="">자기소개서 다운받기</DownloadLink>
           <DownloadLink href="">블로그 이동</DownloadLink>
         </LinkContainer>
       </ContentContainer>

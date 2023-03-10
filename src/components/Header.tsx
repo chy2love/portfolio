@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 export default function Header() {
   const location = useLocation();
@@ -26,41 +26,40 @@ export default function Header() {
   }, [location]);
 
   return (
-    <Container pageScroll={pageScroll}>
-      <div>
-        <Name
-          onClick={() => {
-            location.pathname.includes('sendMail')
-              ? navigate('/')
-              : scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-        >
-          Choi.HY
-        </Name>
-      </div>
-      <div>
-        <ProjectButton>프로젝트</ProjectButton>
-        <SkillButton>스킬</SkillButton>
-        <FAQButton>FAQ</FAQButton>
-        <MailButton to="/sendMail">문의하기</MailButton>
-      </div>
-    </Container>
+    <Frame pageScroll={pageScroll}>
+      <Container>
+        <div>
+          <Name
+            onClick={() => {
+              location.pathname.includes('sendMail')
+                ? navigate('/')
+                : scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+          >
+            Choi.HY
+          </Name>
+        </div>
+        <div>
+          <ProjectButton>프로젝트</ProjectButton>
+          <SkillButton>스킬</SkillButton>
+          <FAQButton>FAQ</FAQButton>
+          <MailButton to="/sendMail">문의하기</MailButton>
+        </div>
+      </Container>
+    </Frame>
   );
 }
-const Container = styled.div<{ pageScroll: boolean }>`
+const Frame = styled.div<{ pageScroll: boolean }>`
   position: fixed;
   top: 0;
   z-index: 100;
-  display: flex;
-  padding: 0 20px;
-  height: 52px;
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  transition: all;
-  transition-duration: 300ms;
+  display: flex;
+  justify-content: center;
   border-bottom: 1px solid #d9d9d9;
   backdrop-filter: blur(15px);
+  transition: all;
+  transition-duration: 300ms;
   ${(props) =>
     props.pageScroll
       ? `
@@ -70,6 +69,14 @@ const Container = styled.div<{ pageScroll: boolean }>`
       : `
   background-color: transparent;
   color: white;`};
+`;
+const Container = styled.div`
+  display: flex;
+  height: 52px;
+  padding: 0 20px;
+  width: 1020px;
+  justify-content: space-between;
+  align-items: center;
 `;
 const Name = styled.p`
   color: inherit;
@@ -107,6 +114,32 @@ const FAQButton = styled.button`
     color: #f65aad;
   }
 `;
+const changeGradient = keyframes`
+    0%{
+      background: transparent
+    }
+    25%{
+      opacity: 25%;
+    }
+    50%{
+      opacity: 50%;
+    }
+    75%{
+      opacity: 75%;
+    }
+    100%{
+      background: linear-gradient(
+        to right,
+        #2ed1af 0%,
+        #5598de 19%,
+        #7f87ff 40%,
+        #eb5ac0 60%,
+        #7f87ff 76%,
+        #5598de 90%,
+        #2ed1af 100%
+      );
+    }
+  `;
 const MailButton = styled(Link)`
   ${Button}
   box-sizing: border-box;
@@ -116,9 +149,12 @@ const MailButton = styled(Link)`
   border-color: inherit;
   border-radius: 16px;
   &:hover {
-    border: none;
+    border: 1px solid transparent;
     color: white;
-    background: linear-gradient(
+    animation-name: ${changeGradient};
+    animation-duration: 300ms;
+    animation-fill-mode: forwards;
+    /* background: linear-gradient(
       to right,
       #2ed1af 0%,
       #5598de 19%,
@@ -127,6 +163,6 @@ const MailButton = styled(Link)`
       #7f87ff 76%,
       #5598de 90%,
       #2ed1af 100%
-    );
+    ); */
   }
 `;

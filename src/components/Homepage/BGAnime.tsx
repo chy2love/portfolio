@@ -62,6 +62,9 @@ const Container = styled.div<ContainerProps>`
   position: relative;
   overflow-x: hidden;
   overflow-y: ${(props) => (props.active ? 'scroll' : 'hidden')};
+  background-color: #0b0b0d;
+  display: flex;
+  justify-content: center;
   -ms-overflow-style: none;
   scrollbar-width: none;
   ::-webkit-scrollbar {
@@ -72,6 +75,9 @@ const TextContainer = styled.div`
   position: sticky;
   z-index: 10;
   top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
 `;
 const TextArea = styled.p`
   position: absolute;
@@ -80,16 +86,14 @@ const TextArea = styled.p`
   /* transform: translateX(24vw); */
   color: white;
   font-weight: 700;
-  font-size: 80px;
+  font-size: 65px;
   line-height: 92.4px;
 `;
 const ScrollArea = styled.div`
+  width: 1240px;
   height: 300vh;
-  background-color: #0b0b0d;
 `;
 const CanvasArea = styled.canvas`
-  position: absolute;
-  top: 0px;
   left: calc(50% - 620px);
   max-width: 1240px;
   /* transform: translateY(21vh); */

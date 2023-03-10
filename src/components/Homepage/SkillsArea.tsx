@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import skillList from '../data/skills';
+import skillList from '../../data/skills';
 interface GraphItemProps {
   height: string;
   backgroundColor: string;

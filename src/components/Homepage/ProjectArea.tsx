@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import backgroundImg from '../assets/backgroundImg.png';
-import phoneFrameImg from '../assets/phoneFrameImg.png';
+import backgroundImg from '../../assets/backgroundImg.png';
+import phoneFrameImg from '../../assets/phoneFrameImg.png';
 export default function ProjectArea() {
   return (
     <Container>

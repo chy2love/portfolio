@@ -1,4 +1,4 @@
-import { FAQ } from '../components/FAQArea';
+import { FAQ } from '../components/Homepage/FAQArea';
 const FAQList: FAQ[] = [
   {
     no: 1,

@@ -1,10 +1,10 @@
 import React from 'react';
-import BGAnime from '../components/BGAnime';
-import ContactMe from '../components/ContactMe';
-import FAQArea from '../components/FAQArea';
-import IntroArea from '../components/IntroArea';
-import ProjectArea from '../components/ProjectArea';
-import SkillsArea from '../components/SkillsArea';
+import BGAnime from '../components/Homepage/BGAnime';
+import ContactMe from '../components/Homepage/ContactMe';
+import FAQArea from '../components/Homepage/FAQArea';
+import IntroArea from '../components/Homepage/IntroArea';
+import ProjectArea from '../components/Homepage/ProjectArea';
+import SkillsArea from '../components/Homepage/SkillsArea';
 export default function Homepage() {
   return (
     <>

@@ -1,4 +1,4 @@
-import { Skill } from '../components/SkillsArea';
+import { Skill } from '../components/Homepage/SkillsArea';
 const skillList: Skill[] = [
   {
     skillName: 'Javascript',
