@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
-
+import { Link as ScrollLink } from 'react-scroll';
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
-
   const [pageScroll, setPageScroll] = useState(false);
-
   const handleScroll = () => {
     location.pathname.includes('sendMail')
       ? setPageScroll(true)
@@ -15,6 +13,7 @@ export default function Header() {
       ? setPageScroll(true)
       : setPageScroll(false);
   };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     location.pathname.includes('sendMail')
@@ -25,6 +24,75 @@ export default function Header() {
     };
   }, [location]);
 
+  const renderBtnAtHome = () => {
+    return (
+      <div>
+        <ProjectButton to="project" offset={-52} smooth={true}>
+          프로젝트
+        </ProjectButton>
+        <SkillButton to="skills" offset={-52} smooth={true}>
+          스킬
+        </SkillButton>
+        <FAQButton to="faqs" offset={-52} smooth={true}>
+          FAQ
+        </FAQButton>
+        <MailButton to="/sendMail">문의하기</MailButton>
+      </div>
+    );
+  };
+  const handleProjectScroll = () => {
+    const project = document
+      .getElementById('project')
+      ?.getBoundingClientRect().top;
+    project && window.scrollTo({ top: project - 52, behavior: 'smooth' });
+  };
+  const handleSkillsScroll = () => {
+    const skills = document
+      .getElementById('skills')
+      ?.getBoundingClientRect().top;
+    skills && window.scrollTo({ top: skills - 52, behavior: 'smooth' });
+  };
+  const handleFaqsScroll = () => {
+    const faqs = document.getElementById('faqs')?.getBoundingClientRect().top;
+    faqs && window.scrollTo({ top: faqs - 52, behavior: 'smooth' });
+  };
+  const renderBtnAtSendMail = () => {
+    return (
+      <div>
+        <ProjectLink
+          to="/"
+          onClick={() => {
+            setTimeout(() => {
+              handleProjectScroll();
+            }, 300);
+          }}
+        >
+          프로젝트
+        </ProjectLink>
+        <SkillLink
+          to="/"
+          onClick={() => {
+            setTimeout(() => {
+              handleSkillsScroll();
+            }, 300);
+          }}
+        >
+          스킬
+        </SkillLink>
+        <FAQLink
+          to="/"
+          onClick={() => {
+            setTimeout(() => {
+              handleFaqsScroll();
+            }, 300);
+          }}
+        >
+          FAQ
+        </FAQLink>
+        <MailButton to="/sendMail">문의하기</MailButton>
+      </div>
+    );
+  };
   return (
     <Frame pageScroll={pageScroll}>
       <Container>
@@ -39,12 +107,21 @@ export default function Header() {
             Choi.HY
           </Name>
         </div>
-        <div>
-          <ProjectButton>프로젝트</ProjectButton>
-          <SkillButton>스킬</SkillButton>
-          <FAQButton>FAQ</FAQButton>
+        {location.pathname.includes('sendMail')
+          ? renderBtnAtSendMail()
+          : renderBtnAtHome()}
+        {/* <div>
+          <ProjectButton to="project" offset={-52} smooth={true}>
+            프로젝트
+          </ProjectButton>
+          <SkillButton to="skills" offset={-52} smooth={true}>
+            스킬
+          </SkillButton>
+          <FAQButton to="faqs" offset={-52} smooth={true}>
+            FAQ
+          </FAQButton>
           <MailButton to="/sendMail">문의하기</MailButton>
-        </div>
+        </div> */}
       </Container>
     </Frame>
   );
@@ -96,20 +173,41 @@ const Button = css`
   transition: all;
   transition-duration: 300ms;
 `;
-const ProjectButton = styled.button`
+const ProjectButton = styled(ScrollLink)`
   ${Button}
   &:hover {
     color: #2ed1af;
   }
 `;
-const SkillButton = styled.button`
+const SkillButton = styled(ScrollLink)`
   ${Button}
   &:hover {
     color: #7f87ff;
   }
 `;
-const FAQButton = styled.button`
+const FAQButton = styled(ScrollLink)`
   ${Button}
+  &:hover {
+    color: #f65aad;
+  }
+`;
+const ProjectLink = styled(Link)`
+  ${Button}
+  text-decoration: none;
+  &:hover {
+    color: #2ed1af;
+  }
+`;
+const SkillLink = styled(Link)`
+  ${Button}
+  text-decoration: none;
+  &:hover {
+    color: #7f87ff;
+  }
+`;
+const FAQLink = styled(Link)`
+  ${Button}
+  text-decoration: none;
   &:hover {
     color: #f65aad;
   }

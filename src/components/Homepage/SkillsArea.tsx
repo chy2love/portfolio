@@ -18,7 +18,6 @@ export default function SkillsArea() {
 
   const observer = new IntersectionObserver(
     (entries) => {
-      console.log(entries);
       if (entries[0].isIntersecting) {
         setActive(true);
       } else {
@@ -43,7 +42,7 @@ export default function SkillsArea() {
     );
   };
   return (
-    <Container>
+    <Container id="skills">
       <InnerContainer>
         <Title>My Skills</Title>
         <ContentContainer ref={ref}>

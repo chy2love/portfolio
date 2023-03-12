@@ -11,7 +11,7 @@ export default function Header() {
         <TextContainer>
           <img src={noticeIcon} alt="" />
           <DescriptionText>
-            form을 연습이 아닙니다. 진짜로 메일로 보내집니다!
+            form을 연습한게 아닙니다. 진짜로 메일로 보내집니다!
           </DescriptionText>
         </TextContainer>
         <TextContainer>

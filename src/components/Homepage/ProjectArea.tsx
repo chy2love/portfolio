@@ -4,7 +4,7 @@ import backgroundImg from '../../assets/backgroundImg.png';
 import phoneFrameImg from '../../assets/phoneFrameImg.png';
 export default function ProjectArea() {
   return (
-    <Container>
+    <Container id="project">
       <FrameContainer>
         <PhoneImg src={phoneFrameImg} alt="" />
         <Notch></Notch>

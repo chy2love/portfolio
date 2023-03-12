@@ -7,7 +7,6 @@ import { ReactComponent as GitIcon } from '../assets/gitIcon.svg';
 export default function Footer() {
   const location = useLocation();
   const [isSendMail, setIsSendMail] = useState(false);
-  console.log(location.pathname);
   useEffect(() => {
     location.pathname.includes('sendMail')
       ? setIsSendMail(true)

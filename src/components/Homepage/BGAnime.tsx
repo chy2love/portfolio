@@ -9,7 +9,6 @@ export default function BGAnime() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [active, setActive] = useState(true);
   const handleScroll = () => {
-    console.log(window.scrollY);
     window.scrollY === 0 ? setActive(true) : setActive(false);
   };
   useEffect(() => {
@@ -23,7 +22,6 @@ export default function BGAnime() {
     if (containerRef.current?.scrollTop) {
       const scroll = containerRef.current.scrollTop;
       const idx = Math.floor(Math.floor((scroll / 1420) * 100) / 2);
-      console.log(idx);
       const ctx = canvasRef.current?.getContext('2d');
       const img = new Image();
       img.src = `canvasVideo/canvasVideo${idx.toString().padStart(2, '0')}.png`;

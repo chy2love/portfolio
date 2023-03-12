@@ -1,37 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
-interface validate {
-  title: string;
-  isFilled?: boolean;
-  validation: boolean;
-}
+
 export default function TextArea() {
-  const validateArr: validate[] = [
-    {
-      title: '이름',
-      isFilled: false,
-      validation: false,
-    },
-    {
-      title: '회사명',
-      isFilled: false,
-      validation: false,
-    },
-    {
-      title: '전화번호',
-      isFilled: false,
-      validation: false,
-    },
-    {
-      title: '이메일',
-      validation: false,
-    },
-  ];
+  const [name, setName] = useState('');
   return (
     <Container>
       <InputBox>
         <Name>이름</Name>
-        <InputArea type="text" placeholder="이름을 입력해주세요" />
+        <InputArea
+          type="text"
+          placeholder="이름을 입력해주세요"
+          onChange={(e) => {
+            setTimeout(() => {
+              console.log('hi');
+            }, 100);
+          }}
+        />
         <ErrorArea>값을 입력해주세요</ErrorArea>
       </InputBox>
       <InputBox>

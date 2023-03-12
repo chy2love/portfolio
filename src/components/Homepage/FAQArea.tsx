@@ -19,7 +19,7 @@ export default function FAQArea() {
       activeNo === i.no ? setActiveNo(0) : setActiveNo(i.no);
     };
     return (
-      <ContentItem activeNo={activeNo} contentNo={i.no}>
+      <ContentItem activeNo={activeNo} contentNo={i.no} key={i.no}>
         <ContentTextArea>
           <ContentTitle>{i.title}</ContentTitle>
           <ContentDescription activeNo={activeNo} contentNo={i.no}>
@@ -34,7 +34,7 @@ export default function FAQArea() {
     );
   };
   return (
-    <Container>
+    <Container id="faqs">
       <Header>FAQ</Header>
       <ContentContainer>
         {FAQList.map((i) => {
