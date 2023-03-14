@@ -212,30 +212,14 @@ const FAQLink = styled(Link)`
     color: #f65aad;
   }
 `;
+
 const changeGradient = keyframes`
     0%{
-      background: transparent
+      background-position-x: 0;
     }
-    25%{
-      opacity: 25%;
-    }
-    50%{
-      opacity: 50%;
-    }
-    75%{
-      opacity: 75%;
-    }
+ 
     100%{
-      background: linear-gradient(
-        to right,
-        #2ed1af 0%,
-        #5598de 19%,
-        #7f87ff 40%,
-        #eb5ac0 60%,
-        #7f87ff 76%,
-        #5598de 90%,
-        #2ed1af 100%
-      );
+     background-position-x: 200px;
     }
   `;
 const MailButton = styled(Link)`
@@ -249,10 +233,8 @@ const MailButton = styled(Link)`
   &:hover {
     border: 1px solid transparent;
     color: white;
-    animation-name: ${changeGradient};
-    animation-duration: 300ms;
-    animation-fill-mode: forwards;
-    /* background: linear-gradient(
+
+    background: linear-gradient(
       to right,
       #2ed1af 0%,
       #5598de 19%,
@@ -261,6 +243,11 @@ const MailButton = styled(Link)`
       #7f87ff 76%,
       #5598de 90%,
       #2ed1af 100%
-    ); */
+    );
+    background-size: 200px 100%;
+    animation: ${changeGradient} 1.5s linear infinite;
+    /* animation-name: ${changeGradient};
+    animation-duration: 300ms;
+    animation-fill-mode: forwards; */
   }
 `;

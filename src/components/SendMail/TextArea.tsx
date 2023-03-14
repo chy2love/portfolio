@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import useDebounce from '../useDebounce';
 import DaumPostCode from 'react-daum-postcode';
 import { init, send } from 'emailjs-com';
@@ -190,18 +190,25 @@ export default function TextArea() {
       <InputBox>
         <Name>주소</Name>
         <AddressArea>
-          <AddressInput
-            type="text"
-            placeholder="주소를 검색해주세요"
-            disabled={true}
-            value={mainAdd}
-          />
-          <AddressBtn type="button" onClick={handle.clickButton}>
-            주소 찾기
-          </AddressBtn>
-          {openPostcode && (
-            <DaumPostCode onComplete={handle.selectAddress} autoClose={false} />
-          )}
+          <InputContainer>
+            <AddressInput
+              type="text"
+              placeholder="주소를 검색해주세요"
+              disabled={true}
+              value={mainAdd}
+            />
+            <AddressBtn type="button" onClick={handle.clickButton}>
+              주소 찾기
+            </AddressBtn>
+          </InputContainer>
+          <div>
+            {openPostcode && (
+              <PostCodePopUp
+                onComplete={handle.selectAddress}
+                autoClose={false}
+              />
+            )}
+          </div>
         </AddressArea>
         <InputArea
           type="text"
@@ -252,6 +259,10 @@ const InputBox = styled.div`
     }
   }
 `;
+const InputContainer = styled.div`
+  display: flex;
+  gap: 8px;
+`;
 const Name = styled.p`
   display: flex;
   font-weight: 500;
@@ -280,6 +291,10 @@ const MemoArea = styled.textarea`
   width: 100%;
   resize: none;
   height: 106px;
+  font-weight: 500;
+  ::placeholder {
+    font-weight: 400;
+  }
 `;
 const InputArea = styled.input`
   ${Input}
@@ -293,6 +308,7 @@ const ErrorArea = styled.p`
 `;
 const AddressArea = styled.div`
   display: flex;
+  flex-direction: column;
   width: 100%;
   gap: 8px;
 `;
@@ -300,6 +316,15 @@ const AddressInput = styled.input`
   width: 393px;
   ${Input}
 `;
+const changeGradient = keyframes`
+    0%{
+      background-position-x: 0;
+    }
+ 
+    100%{
+     background-position-x: 200px;
+    }
+  `;
 const AddressBtn = styled.button`
   width: 79px;
   height: 46px;
@@ -311,6 +336,23 @@ const AddressBtn = styled.button`
   line-height: 22px;
   font-weight: 600;
   cursor: pointer;
+  &:hover {
+    border: 1px solid transparent;
+    color: white;
+
+    background: linear-gradient(
+      to right,
+      #2ed1af 0%,
+      #5598de 19%,
+      #7f87ff 40%,
+      #eb5ac0 60%,
+      #7f87ff 76%,
+      #5598de 90%,
+      #2ed1af 100%
+    );
+    background-size: 200px 100%;
+    animation: ${changeGradient} 1.5s linear infinite;
+  }
 `;
 const SendBtn = styled.button`
   width: 100%;
@@ -328,4 +370,7 @@ const SendBtn = styled.button`
     background-color: #a5a5a5;
     cursor: default;
   }
+`;
+const PostCodePopUp = styled(DaumPostCode)`
+  width: 100%;
 `;

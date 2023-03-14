@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import dotIcon from '../../assets/dotIcon.png';
 export default function IntroArea() {
   return (
@@ -36,6 +36,15 @@ export default function IntroArea() {
     </Container>
   );
 }
+const changeGradient = keyframes`
+    0%{
+      background-position-x: 0;
+    }
+ 
+    100%{
+     background-position-x: 200px;
+    }
+  `;
 const Container = styled.div`
   height: 90vh;
   display: flex;
@@ -75,4 +84,21 @@ const DownloadLink = styled.a`
   font-size: 14px;
   font-weight: 700;
   line-height: 22px;
+  &:hover {
+    border: 1px solid transparent;
+    color: white;
+
+    background: linear-gradient(
+      to right,
+      #2ed1af 0%,
+      #5598de 19%,
+      #7f87ff 40%,
+      #eb5ac0 60%,
+      #7f87ff 76%,
+      #5598de 90%,
+      #2ed1af 100%
+    );
+    background-size: 200px 100%;
+    animation: ${changeGradient} 1.5s linear infinite;
+  }
 `;
