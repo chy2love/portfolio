@@ -43,9 +43,10 @@
     url('./styles/font/SpoqaHanSansNeo-Thin.woff') format('woff'),
     url('./styles/font/SpoqaHanSansNeo-Thin.ttf') format('truetype');
 }
+
 * {
   box-sizing: border-box;
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-family: 'Spoqa Han Sans Neo', sans-serif !important;
 }
 body::-webkit-scrollbar {
   width: 8px;
