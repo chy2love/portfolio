@@ -275,7 +275,7 @@ const Input = css`
   padding: 12px;
   border: 1px solid #ececec;
   border-radius: 12px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 22px;
   outline: none;
