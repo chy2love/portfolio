@@ -55,7 +55,11 @@ export default function Footer() {
           </ContentThirdRow>
         </ContentContainer>
         <IconContainer>
-          <a href="" target={'_blank'} rel="noopener noreferer nofollow">
+          <a
+            href="https://github.com/chy2love"
+            target={'_blank'}
+            rel="noopener noreferer nofollow"
+          >
             <GitIcon
               onMouseOver={() => {
                 setGitHover(true);
