@@ -40,27 +40,27 @@ export default function Header() {
       </div>
     );
   };
-  const handleProjectScroll = () => {
-    const project = document
-      .getElementById('project')
-      ?.getBoundingClientRect().top;
-    project && window.scrollTo({ top: project - 52, behavior: 'smooth' });
-  };
-  const handleSkillsScroll = () => {
-    const skills = document
-      .getElementById('skills')
-      ?.getBoundingClientRect().top;
-    skills && window.scrollTo({ top: skills - 52, behavior: 'smooth' });
-  };
-  const handleFaqsScroll = () => {
-    const faqs = document.getElementById('faqs')?.getBoundingClientRect().top;
-    faqs && window.scrollTo({ top: faqs - 52, behavior: 'smooth' });
-  };
   const renderBtnAtSendMail = () => {
+    const handleProjectScroll = () => {
+      const project = document
+        .getElementById('project')
+        ?.getBoundingClientRect().top;
+      project && window.scrollTo({ top: project - 52, behavior: 'smooth' });
+    };
+    const handleSkillsScroll = () => {
+      const skills = document
+        .getElementById('skills')
+        ?.getBoundingClientRect().top;
+      skills && window.scrollTo({ top: skills - 52, behavior: 'smooth' });
+    };
+    const handleFaqsScroll = () => {
+      const faqs = document.getElementById('faqs')?.getBoundingClientRect().top;
+      faqs && window.scrollTo({ top: faqs - 52, behavior: 'smooth' });
+    };
     return (
       <div>
         <ProjectLink
-          to="/"
+          to="/?link=project"
           onClick={() => {
             setTimeout(() => {
               handleProjectScroll();
@@ -70,7 +70,7 @@ export default function Header() {
           프로젝트
         </ProjectLink>
         <SkillLink
-          to="/"
+          to="/?link=skills"
           onClick={() => {
             setTimeout(() => {
               handleSkillsScroll();
@@ -80,7 +80,7 @@ export default function Header() {
           스킬
         </SkillLink>
         <FAQLink
-          to="/"
+          to="/?link=faqs"
           onClick={() => {
             setTimeout(() => {
               handleFaqsScroll();
