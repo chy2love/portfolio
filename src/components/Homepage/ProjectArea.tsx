@@ -58,7 +58,7 @@ export default function ProjectArea() {
             <ListItem>
               홈짐 예약 페이지 (카테고리별 분류 기능, 글 작성 버튼)
             </ListItem>
-            <ListItem>소셜 로그인</ListItem>
+            <ListItem>OAuth 소셜 로그인(Kakao,Google)</ListItem>
           </ListContainer>
         </div>
       </TextContainer>
