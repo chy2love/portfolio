@@ -20,8 +20,8 @@ export default function IntroArea() {
             프로젝트 진행 중 백엔드에서 기존 api 명세서와 다른 구조의 데이터가
             받아지는 문제가 있었고 많은 코드 수정을 거치는 과정이 있었습니다.{' '}
             <b>커뮤니케이션의 중요성</b>을 깨닫고 모호한 부분이 있다면 백엔드와
-            조율하고 소통하며 프로젝트를 완성시키며 이 과정을 통해 소통 능력의
-            중요성을 배우고 키울 수 있었습니다.
+            조율하고 소통하며 프로젝트를 완성시키며 이 과정을 통해 <br />
+            소통 능력의 중요성을 배우고 키울 수 있었습니다.
             <br /> 저는 함께 일하고 싶은 개발자가 되기 위해 새로운 협업
             프로젝트를 진행중이고, 자기 개발을 위한 블로그를 운영하며 공부하고
             있습니다. 저는 새로운 기술을 습득할 때 설레고 재미있습니다. 이처럼
@@ -65,8 +65,8 @@ const ContentContainer = styled.div`
   gap: 40px;
 `;
 const ContentTextArea = styled.p`
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 26px;
   font-weight: 400;
   text-align: center;
   b {

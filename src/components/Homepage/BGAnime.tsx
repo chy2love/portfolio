@@ -21,7 +21,7 @@ export default function BGAnime() {
   const handleDivScroll = useCallback(() => {
     if (containerRef.current?.scrollTop) {
       const scroll = containerRef.current.scrollTop;
-      const idx = Math.floor(Math.floor((scroll / 1420) * 100) / 2);
+      const idx = Math.floor(Math.floor((scroll / 3748) * 100) / 2);
       const ctx = canvasRef.current?.getContext('2d');
       const img = new Image();
       img.src = `canvasVideo/canvasVideo${idx.toString().padStart(2, '0')}.png`;
@@ -32,7 +32,6 @@ export default function BGAnime() {
   }, []);
   useEffect(() => {
     containerRef.current?.addEventListener('scroll', handleDivScroll);
-
     return () => {
       containerRef.current?.removeEventListener('scroll', handleDivScroll);
     };
@@ -89,7 +88,7 @@ const TextArea = styled.p`
 `;
 const ScrollArea = styled.div`
   width: 1240px;
-  height: 300vh;
+  height: 500vh;
 `;
 const CanvasArea = styled.canvas`
   left: calc(50% - 620px);
