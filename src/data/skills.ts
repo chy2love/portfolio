@@ -9,7 +9,7 @@ const skillList: Skill[] = [
   {
     skillName: 'Typescript',
     backgroundColor: 'linear-gradient(#2ca2b4, #5598de)',
-    height: '65%',
+    height: '70%',
     id: 2,
   },
   {
@@ -21,7 +21,7 @@ const skillList: Skill[] = [
   {
     skillName: 'Tailwind',
     backgroundColor: 'linear-gradient(#0071e3, #7f87ff)',
-    height: '45%',
+    height: '65%',
     id: 4,
   },
   {
@@ -33,7 +33,7 @@ const skillList: Skill[] = [
   {
     skillName: 'Scss',
     backgroundColor: 'linear-gradient(#b772d9, #f65aad)',
-    height: '75%',
+    height: '60%',
     id: 6,
   },
   {
