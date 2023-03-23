@@ -11,22 +11,21 @@ export default function Homepage() {
   const [spinnerActive, setSpinnerActive] = useState(true);
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
+  const handleSpinner = () => {
+    setSpinnerActive(false);
+  };
   useEffect(() => {
-    window.onbeforeunload = function (e) {
-      e.preventDefault();
-      console.log('넌 못지나간다');
-      return navigate('/?');
-    };
+    window.onload = handleSpinner;
   }, []);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setSpinnerActive(false);
-    }, 2500);
-    timer;
-    return () => {
-      timer;
-    };
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setSpinnerActive(false);
+  //   }, 2500);
+  //   timer;
+  //   return () => {
+  //     timer;
+  //   };
+  // }, []);
   return (
     <>
       {!params.get('link') && spinnerActive && <Spinner />}
