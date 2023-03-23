@@ -10,18 +10,15 @@ import Spinner from '../components/Spinner';
 export default function Homepage() {
   const [spinnerActive, setSpinnerActive] = useState(true);
   const [params, setParams] = useSearchParams();
-  const navigate = useNavigate();
+  const [loaded, setLoaded] = useState(false);
   const handleSpinner = () => {
     setTimeout(() => {
       setSpinnerActive(false);
     }, 2500);
   };
   useEffect(() => {
-    window.onload = handleSpinner;
-    return () => {
-      handleSpinner;
-    };
-  }, []);
+    loaded && handleSpinner();
+  }, [loaded]);
   // useEffect(() => {
   //   const timer = setTimeout(() => {
   //     setSpinnerActive(false);
@@ -34,7 +31,7 @@ export default function Homepage() {
   return (
     <>
       {!params.get('link') && spinnerActive && <Spinner />}
-      <BGAnime />
+      <BGAnime setLoaded={setLoaded} />
       <IntroArea />
       <ProjectArea />
       <SkillsArea />
