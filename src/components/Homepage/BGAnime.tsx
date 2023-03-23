@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import images from './ImageImport';
 import styled from 'styled-components';
-import { convertToObject } from 'typescript';
 interface ContainerProps {
   active: boolean;
 }
@@ -11,6 +11,7 @@ export default function BGAnime() {
   const handleScroll = () => {
     window.scrollY === 0 ? setActive(true) : setActive(false);
   };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -22,10 +23,10 @@ export default function BGAnime() {
     if (containerRef.current?.scrollTop) {
       const scroll = containerRef.current.scrollTop;
       console.log(scroll);
-      const idx = Math.floor(Math.floor((scroll / 2811) * 100) / 2);
+      const idx = Math.floor(Math.floor((scroll / 2811) * 110) / 2);
       const ctx = canvasRef.current?.getContext('2d');
       const img = new Image();
-      img.src = `canvasVideo/canvasVideo${idx.toString().padStart(2, '0')}.png`;
+      img.src = `${images[idx]}`;
       img.onload = () => {
         ctx?.drawImage(img, 0, 0);
       };
