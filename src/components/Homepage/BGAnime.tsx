@@ -21,7 +21,8 @@ export default function BGAnime() {
   const handleDivScroll = useCallback(() => {
     if (containerRef.current?.scrollTop) {
       const scroll = containerRef.current.scrollTop;
-      const idx = Math.floor(Math.floor((scroll / 3748) * 100) / 2);
+      console.log(scroll);
+      const idx = Math.floor(Math.floor((scroll / 2811) * 100) / 2);
       const ctx = canvasRef.current?.getContext('2d');
       const img = new Image();
       img.src = `canvasVideo/canvasVideo${idx.toString().padStart(2, '0')}.png`;
@@ -88,7 +89,7 @@ const TextArea = styled.p`
 `;
 const ScrollArea = styled.div`
   width: 1240px;
-  height: 500vh;
+  height: 400vh;
 `;
 const CanvasArea = styled.canvas`
   left: calc(50% - 620px);
