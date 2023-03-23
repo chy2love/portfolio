@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import { convertToObject } from 'typescript';
 interface ContainerProps {
@@ -18,7 +18,7 @@ export default function BGAnime() {
     };
   }, []);
 
-  const handleDivScroll = () => {
+  const handleDivScroll = useCallback(() => {
     if (containerRef.current?.scrollTop) {
       const scroll = containerRef.current.scrollTop;
       const idx = Math.floor(Math.floor((scroll / 1420) * 100) / 2);
@@ -29,7 +29,7 @@ export default function BGAnime() {
         ctx?.drawImage(img, 0, 0);
       };
     }
-  };
+  }, []);
   useEffect(() => {
     containerRef.current?.addEventListener('scroll', handleDivScroll);
 

@@ -14,18 +14,18 @@ export default function Homepage() {
   const handleSpinner = () => {
     setSpinnerActive(false);
   };
-  useEffect(() => {
-    window.onload = handleSpinner;
-  }, []);
   // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setSpinnerActive(false);
-  //   }, 2500);
-  //   timer;
-  //   return () => {
-  //     timer;
-  //   };
+  //   window.onload = handleSpinner;
   // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSpinnerActive(false);
+    }, 3000);
+    timer;
+    return () => {
+      timer;
+    };
+  }, []);
   return (
     <>
       {!params.get('link') && spinnerActive && <Spinner />}
