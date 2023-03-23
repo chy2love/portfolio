@@ -30,8 +30,13 @@ export default function IntroArea() {
           </ContentTextArea>
         </div>
         <LinkContainer>
-          <DownloadLink href="">이력서 다운받기</DownloadLink>
-          <DownloadLink href="">블로그 이동</DownloadLink>
+          <DownloadLink
+            href={`${process.env.PUBLIC_URL}/applyForm.pdf`}
+            download="최하영_이력서"
+          >
+            이력서 다운받기
+          </DownloadLink>
+          {/* <DownloadLink href="">블로그 이동</DownloadLink> */}
         </LinkContainer>
       </ContentContainer>
     </Container>
@@ -81,6 +86,7 @@ const DownloadLink = styled.a`
   cursor: pointer;
   border: 1px solid #1d1d1f;
   border-radius: 16px;
+  color: black;
   padding: 4px 10px;
   font-size: 14px;
   font-weight: 700;

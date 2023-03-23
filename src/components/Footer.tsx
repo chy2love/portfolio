@@ -33,12 +33,12 @@ export default function Footer() {
                 chlgkduddlek@gmail.com
               </a>
             </ContentFirstRow>
-            <ContentSecondRow>
+            {/* <ContentSecondRow>
               <p>blog:&nbsp;</p>
               <a href="" target={'_blank'} rel="noopener noreferer nofollow">
                 블로그 링크 써야함
               </a>
-            </ContentSecondRow>
+            </ContentSecondRow> */}
           </div>
           <ContentThirdRow>
             <p>
@@ -71,7 +71,7 @@ export default function Footer() {
               fill={gitHover ? '#f05600' : isSendMail ? '#a5a5a5' : 'white'}
             />
           </a>
-          <a href="" target={'_blank'} rel="noopener noreferer nofollow">
+          {/* <a href="" target={'_blank'} rel="noopener noreferer nofollow">
             <BlogIcon
               onMouseOver={() => {
                 setBlogHover(true);
@@ -82,8 +82,12 @@ export default function Footer() {
               style={{ transitionDuration: '500ms' }}
               fill={blogHover ? '#00990f' : isSendMail ? '#a5a5a5' : 'white'}
             />
-          </a>
-          <a href="" target={'_blank'} rel="noopener noreferer nofollow">
+          </a> */}
+          <a
+            href="https://open.kakao.com/me/choi_hy"
+            target={'_blank'}
+            rel="noopener noreferer nofollow"
+          >
             <KakaoIcon
               onMouseOver={() => {
                 setKakaoHover(true);
