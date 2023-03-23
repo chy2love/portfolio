@@ -12,20 +12,25 @@ export default function Homepage() {
   const [params, setParams] = useSearchParams();
   const navigate = useNavigate();
   const handleSpinner = () => {
-    setSpinnerActive(false);
-  };
-  // useEffect(() => {
-  //   window.onload = handleSpinner;
-  // }, []);
-  useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setSpinnerActive(false);
-    }, 3000);
-    timer;
+    }, 2500);
+  };
+  useEffect(() => {
+    window.onload = handleSpinner;
     return () => {
-      timer;
+      handleSpinner;
     };
   }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setSpinnerActive(false);
+  //   }, 3000);
+  //   timer;
+  //   return () => {
+  //     timer;
+  //   };
+  // }, []);
   return (
     <>
       {!params.get('link') && spinnerActive && <Spinner />}
