@@ -19,19 +19,19 @@ export default function Homepage() {
   useEffect(() => {
     loaded && handleSpinner();
   }, [loaded]);
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setSpinnerActive(false);
-  //   }, 3000);
-  //   timer;
-  //   return () => {
-  //     timer;
-  //   };
-  // }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSpinnerActive(false);
+    }, 3000);
+    timer;
+    return () => {
+      timer;
+    };
+  }, []);
   return (
     <>
       {!params.get('link') && spinnerActive && <Spinner />}
-      <BGAnime setLoaded={setLoaded} />
+      {/* <BGAnime setLoaded={setLoaded} /> */}
       <IntroArea />
       <ProjectArea />
       <SkillsArea />

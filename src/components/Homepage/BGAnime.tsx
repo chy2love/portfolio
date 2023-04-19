@@ -25,7 +25,6 @@ export default function BGAnime(props: BGAProps) {
   const handleDivScroll = useCallback(() => {
     if (containerRef.current?.scrollTop) {
       const scroll = containerRef.current.scrollTop;
-      console.log(scroll);
       const idx = Math.floor(Math.floor((scroll / 2811) * 110) / 2);
       const ctx = canvasRef.current?.getContext('2d');
       const img = new Image();
