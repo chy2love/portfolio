@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import BGAnime from '../components/Homepage/BGAnime';
 import ContactMe from '../components/Homepage/ContactMe';
@@ -31,7 +31,9 @@ export default function Homepage() {
   return (
     <>
       {!params.get('link') && spinnerActive && <Spinner />}
-      {/* <BGAnime setLoaded={setLoaded} /> */}
+      <Suspense fallback={<Spinner />}>
+        <BGAnime />
+      </Suspense>
       <IntroArea />
       <ProjectArea />
       <SkillsArea />

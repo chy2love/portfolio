@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styled, { css, keyframes } from 'styled-components';
 import { Link as ScrollLink } from 'react-scroll';
+
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,15 +15,15 @@ export default function Header() {
       : setPageScroll(false);
   };
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleScroll);
-  //   location.pathname.includes('sendMail')
-  //     ? setPageScroll(true)
-  //     : setPageScroll(false);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [location]);
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    location.pathname.includes('sendMail')
+      ? setPageScroll(true)
+      : setPageScroll(false);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [location]);
 
   const renderBtnAtHome = () => {
     return (

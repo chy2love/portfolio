@@ -4,10 +4,8 @@ import styled from 'styled-components';
 interface ContainerProps {
   active: boolean;
 }
-interface BGAProps {
-  setLoaded: React.Dispatch<React.SetStateAction<boolean>>;
-}
-export default function BGAnime(props: BGAProps) {
+
+export default function BGAnime() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [active, setActive] = useState(true);
@@ -16,7 +14,6 @@ export default function BGAnime(props: BGAProps) {
   };
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    props.setLoaded(true);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
