@@ -8,12 +8,13 @@ interface ContainerProps {
 export default function BGAnime() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
   const handleScroll = () => {
     window.scrollY === 0 ? setActive(true) : setActive(false);
   };
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    setActive(true);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

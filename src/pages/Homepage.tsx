@@ -30,15 +30,15 @@ export default function Homepage() {
   }, []);
   return (
     <>
-      {!params.get('link') && spinnerActive && <Spinner />}
       <Suspense fallback={<Spinner />}>
+        {!params.get('link') && spinnerActive && <Spinner />}
         <BGAnime />
+        <IntroArea />
+        <ProjectArea />
+        <SkillsArea />
+        <FAQArea />
+        <ContactMe />
       </Suspense>
-      <IntroArea />
-      <ProjectArea />
-      <SkillsArea />
-      <FAQArea />
-      <ContactMe />
     </>
   );
 }
