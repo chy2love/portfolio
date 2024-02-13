@@ -22,7 +22,7 @@ export default function Homepage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSpinnerActive(false);
-    }, 3000);
+    }, 1500);
     timer;
     return () => {
       timer;
@@ -32,7 +32,7 @@ export default function Homepage() {
     <>
       <Suspense fallback={<Spinner />}>
         {!params.get('link') && spinnerActive && <Spinner />}
-        <BGAnime />
+        {/* <BGAnime /> */}
         <IntroArea />
         <ProjectArea />
         <SkillsArea />

@@ -5,13 +5,13 @@ import phoneFrameImg from '../../assets/phoneFrameImg.png';
 export default function ProjectArea() {
   return (
     <Container id="project">
-      <FrameContainer>
+      {/* <FrameContainer>
         <PhoneImg src={phoneFrameImg} alt="" />
         <Notch></Notch>
         <IFrameContent src="https://health-healther-fe.vercel.app/">
           iframe을 지원하지 않는 브라우저 입니다
         </IFrameContent>
-      </FrameContainer>
+      </FrameContainer> */}
       <TextContainer>
         <Project>Project</Project>
         <Title>헬스헬써</Title>
@@ -36,13 +36,23 @@ export default function ProjectArea() {
             <p>Tailwind</p>
           </ContentContainer>
           <ContentContainer>
-            <ContentName>링크</ContentName>
+            <ContentName>깃헙 링크</ContentName>
             <ProjectLink
-              href="https://health-healther-fe.vercel.app/"
+              href="https://github.com/healthHealther/healthHealtherFE"
               target={'_blank'}
               rel="noopener noreferer nofollow"
             >
-              https://health-healther-fe.vercel.app/
+              https://github.com/healthHealther
+            </ProjectLink>
+          </ContentContainer>
+          <ContentContainer>
+            <ContentName>시연 영상</ContentName>
+            <ProjectLink
+              href="https://www.youtube.com/watch?v=ZON_avdtfSE"
+              target={'_blank'}
+              rel="noopener noreferer nofollow"
+            >
+              https://www.youtube.com
             </ProjectLink>
           </ContentContainer>
         </DetailContainer>

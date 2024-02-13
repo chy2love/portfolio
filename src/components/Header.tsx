@@ -138,15 +138,8 @@ const Frame = styled.div<{ pageScroll: boolean }>`
   backdrop-filter: blur(15px);
   transition: all;
   transition-duration: 300ms;
-  ${(props) =>
-    props.pageScroll
-      ? `
   background-color: rgba(255, 255, 255, 0.3);
   color: #1d1d1f;
-  `
-      : `
-  background-color: transparent;
-  color: white;`};
 `;
 const Container = styled.div`
   display: flex;
